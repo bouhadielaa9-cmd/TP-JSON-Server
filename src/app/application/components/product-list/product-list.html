@@ -1,0 +1,10 @@
+<h2>Liste des produits</h2>
+
+@for (p of products(); track p.id) {
+  <div>
+    <h3>{{p.name}}</h3>
+    <span>Prix : {{ p.price }} DT</span>
+    <span>ID :{{ p.id }}</span>
+  </div>
+}
+<button (click)="onaddproduct()">ajouter</button>
