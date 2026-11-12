@@ -1,0 +1,23 @@
+{
+  "parks": [
+    {
+      "id": "gWAL8FxDFFw",
+      "name": "Dream Park",
+      "photo": "parks/dream.jpg",
+      "nbLikes": 581,
+      "openingDate": "2021-09-09",
+      "hours": "8h00 - 18h00",
+      "location": "Tabarka"
+    },
+    {
+      "id": "aABCDEFgHij",
+      "name": "Alyssa Park",
+      "photo": "parks/alyssa.jpg",
+      "nbLikes": 427,
+      "openingDate": "2023-08-15",
+      "hours": "8h00 - 23h00",
+      "location": "Tunis"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

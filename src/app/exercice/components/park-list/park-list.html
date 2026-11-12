@@ -1,0 +1,25 @@
+<h2>Liste des parcs</h2>
+
+@if (errorMessage) {
+  <app-error [message]="errorMessage" />
+} @else {
+  @for (p of parks(); track p.id) {
+    <div>
+      <img [src]="p.photo" width="150">
+
+      <h3>{{ p.name }}</h3>
+      <p>Likes : {{ p.nblikes }}</p>
+      <p>Date d'ouverture : {{ p.openingDate | date }}</p>
+
+      <button [routerLink]="['/parks', p.id]">
+        Voir détails
+      </button>
+
+      <button (click)="deletePark(p.id)">
+        Supprimer
+      </button>
+    </div>
+  } @empty {
+    <p>Aucun parc disponible.</p>
+  }
+}
