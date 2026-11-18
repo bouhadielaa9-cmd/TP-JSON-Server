@@ -1,0 +1,20 @@
+<div class="card shadow-sm mb-3">
+
+  <img [src]="park().photo" class="card-img-top" alt="Photo du parc">
+  <div class="card-body">
+    <h5 class="card-title">{{ park().name }}</h5>
+    <p class="card-text">
+      Likes : {{ park().nbLikes }}
+    </p>
+
+    <p class="card-text">
+      Date d'ouverture : {{ park().openingDate | date:'dd/MM/yyyy' }}
+    </p>
+    <button
+      class="btn btn-primary"
+      [routerLink]="['/parks',park().id]">
+      Voir détails
+    </button>
+
+  </div>
+</div>

@@ -16,11 +16,11 @@ export class ParkService {
   private readonly _parks = signal<Park[]>([]);
   parks = this._parks.asReadonly();
 
-  getParks(): Observable<Park[]> {
-    return this.http.get<Park[]>(URL).pipe(
-      tap(data => this._parks.set(data))
-    );
-  }
+  getParks() {
+  return this.http.get<Park[]>(URL).pipe(
+    tap(data => this._parks.set(data))
+  );
+}
 
   getParkById(id: string): Observable<Park> {
     return this.http.get<Park>(`${URL}/${id}`);

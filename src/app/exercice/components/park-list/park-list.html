@@ -1,25 +1,64 @@
-<h2>Liste des parcs</h2>
+ <h2 class="text-center text-primary fw-bold mb-4">Liste des parcs</h2>
 
 @if (errorMessage) {
   <app-error [message]="errorMessage" />
 } @else {
-  @for (p of parks(); track p.id) {
-    <div>
-      <img [src]="p.photo" width="150">
+  <div class="container">
+    <div class="row g-4">
+      @for (p of parks(); track p.id) {
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <img [src]="p.photo" class="card-img-top" alt="Photo du parc">
 
-      <h3>{{ p.name }}</h3>
-      <p>Likes : {{ p.nblikes }}</p>
-      <p>Date d'ouverture : {{ p.openingDate | date }}</p>
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold">{{ p.name }}</h5>
 
-      <button [routerLink]="['/parks', p.id]">
-        Voir détails
-      </button>
+              <p class="card-text">
+                <strong>Likes :</strong> {{ p.nbLikes }}
+              </p>
 
-      <button (click)="deletePark(p.id)">
-        Supprimer
-      </button>
+              <p class="card-text">
+                <strong>Date d'ouverture :</strong>
+                {{ p.openingDate | date:'dd/MM/yyyy' }}
+              </p>
+              <div class="d-flex justify-content-between mt-3">
+                <button class="btn btn-primary"
+                        [routerLink]="['/parks', p.id]">
+                  Voir détails
+                </button>
+                <button class="btn btn-danger"
+                        (click)="deletePark(p.id)">
+                  Supprimer
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <p class="text-center text-muted">Aucun parc disponible.</p>
+      }
     </div>
-  } @empty {
-    <p>Aucun parc disponible.</p>
-  }
+  </div>
 }
+@if (errorMessage) {
+  <app-error [message]="errorMessage" />
+}
+
+<div class="container">
+  <h2 class="text-center text-primary mb-4">Liste des parcs</h2>
+
+  <div class="row">
+    @for (p of parks(); track p.id) {
+      <div class="col-md-4">
+        <app-park-item [park]="p" />
+
+        <button class="btn btn-danger mb-3"
+                (click)="deletePark(p.id)">
+          Supprimer
+        </button>
+      </div>
+    } @empty {
+      <p>Aucun parc disponible.</p>
+    }
+  </div>
+</div>

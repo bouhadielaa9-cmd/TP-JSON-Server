@@ -21,24 +21,19 @@
       "price": 33.8
     },
     {
-      "id": "6unvHxqLHBw",
       "name": "crayon",
-      "price": 2.3
-    },
-    {
-      "id": "OpSoBB48RuI",
-      "name": "crayon",
-      "price": 2.3
+      "price": 2.3,
+      "id": "tnI17oDb2ck"
     },
     {
       "name": "crayon",
       "price": 2.3,
-      "id": "9JCNfqGz0gA"
+      "id": "GPqmzs99jt4"
     },
     {
       "name": "crayon",
       "price": 2.3,
-      "id": "bf1HRZ0uE-A"
+      "id": "CACriVg5sT4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
